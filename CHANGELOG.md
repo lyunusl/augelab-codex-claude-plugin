@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.1.1 - Beta
+
+- Include the original AugeLab symbol in the plugin listing, composer, and skill.
+- Validate that branding assets are present in both release archives.
+
 ## 0.1.0 - Beta
 
 - One shared `augelab` skill for Codex and Claude Code.

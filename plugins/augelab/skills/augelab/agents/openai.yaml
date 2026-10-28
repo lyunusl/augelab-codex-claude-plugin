@@ -1,3 +1,5 @@
 interface:
   display_name: "AugeLab"
   short_description: "Build and inspect AugeLab Studio projects"
+  icon_small: "./assets/augelab.png"
+  icon_large: "./assets/augelab.png"

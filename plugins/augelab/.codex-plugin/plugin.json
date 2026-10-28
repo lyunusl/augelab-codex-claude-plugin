@@ -1,6 +1,6 @@
 {
   "name": "augelab",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Create, inspect, and improve AugeLab Studio projects through its local MCP connection.",
   "author": {
     "name": "AugeLab"
@@ -14,6 +14,8 @@
     "longDescription": "Connect Codex to AugeLab Studio on your computer. Describe your task and work with Studio projects using its live tools and documentation. Requires an installed, running Studio with MCP enabled.",
     "developerName": "AugeLab",
     "category": "Productivity",
+    "logo": "./assets/augelab.png",
+    "composerIcon": "./assets/augelab.png",
     "capabilities": ["Read", "Write"],
     "defaultPrompt": [
       "Use AugeLab to build a visual inspection project from my sample images."

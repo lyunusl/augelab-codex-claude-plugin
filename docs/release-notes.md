@@ -1,6 +1,14 @@
-# AugeLab 0.1.0 beta - Codex and Claude Code
+# AugeLab 0.1.1 beta - Codex and Claude Code
 
-The first AugeLab plugin package connects a local coding agent to an existing
+This update adds the original AugeLab logo to the plugin listing, composer,
+and skill. Existing Codex users can refresh and install the updated package:
+
+```sh
+codex plugin marketplace upgrade augelab-plugins
+codex plugin add augelab@augelab-plugins
+```
+
+The AugeLab plugin package connects a local coding agent to an existing
 AugeLab Studio installation using MCP. It contains one shared `augelab` skill,
 client-specific manifests, and installation instructions in English and Turkish.
 
@@ -24,8 +32,8 @@ Run Studio on the same computer and start its MCP server first.
 
 ## Assets
 
-- `augelab-0.1.0.zip`: plugin only.
-- `augelab-marketplace-0.1.0.zip`: extract to install from a local marketplace.
+- `augelab-0.1.1.zip`: plugin only.
+- `augelab-marketplace-0.1.1.zip`: extract to install from a local marketplace.
 - `SHA256SUMS.txt`: SHA-256 checksums for both archives.
 
 ## Beta limitations

@@ -3,7 +3,7 @@
 Tek bir `augelab` becerisi, çalışan AugeLab Studio'nun mevcut MCP araçlarına bağlanır.
 Studio'nun blok kataloğu ve iş akışları plugin içinde kopyalanmaz.
 
-**0.1.0 beta:** Codex yerel kurulumu doğrulandı. Canlı Studio iş akışı ve Claude
+**0.1.1 beta:** Codex yerel kurulumu doğrulandı. Canlı Studio iş akışı ve Claude
 Code çalışma testi henüz tamamlanmadı.
 
 ## Önce Studio
@@ -39,7 +39,7 @@ Claude Desktop'ın ayrı sohbet bağlantı ayarları için değildir.
 
 ## Yerel ZIP kurulumu
 
-`augelab-marketplace-0.1.0.zip` arşivini çıkarın. Codex için çıkarılan klasörde
+`augelab-marketplace-0.1.1.zip` arşivini çıkarın. Codex için çıkarılan klasörde
 `codex plugin marketplace add .`, ardından `codex plugin add augelab@augelab-plugins`
 çalıştırın. Claude Code için `claude plugin marketplace add .`, ardından
 `claude plugin install augelab@augelab-plugins` kullanın.

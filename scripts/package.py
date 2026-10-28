@@ -5,6 +5,7 @@ from __future__ import annotations
 import hashlib
 import json
 import re
+import struct
 import zipfile
 from pathlib import Path
 
@@ -14,8 +15,10 @@ PLUGIN_FILES = (
     ".codex-plugin/plugin.json",
     ".claude-plugin/plugin.json",
     ".mcp.json",
+    "assets/augelab.png",
     "skills/augelab/SKILL.md",
     "skills/augelab/agents/openai.yaml",
+    "skills/augelab/assets/augelab.png",
     "skills/augelab/references/connection.md",
 )
 MARKETPLACE_FILES = (
@@ -51,6 +54,13 @@ def validate() -> str:
     require(codex["skills"] == "./skills/", "Unexpected skills path")
     require(codex["mcpServers"] == "./.mcp.json", "Unexpected MCP path")
     require(codex["requires_local_executor"] is True, "Desktop execution must be declared")
+    for field in ("logo", "composerIcon"):
+        require(codex["interface"].get(field) == "./assets/augelab.png", f"Missing AugeLab {field}")
+    logo = (PLUGIN / "assets/augelab.png").read_bytes()
+    require(logo[:8] == b"\x89PNG\r\n\x1a\n" and logo[12:16] == b"IHDR", "Invalid logo PNG")
+    width, height = struct.unpack(">II", logo[16:24])
+    require(48 <= width == height <= 4096 and len(logo) <= 5 * 1024 * 1024, "Invalid logo dimensions or size")
+    require(logo == (PLUGIN / "skills/augelab/assets/augelab.png").read_bytes(), "Skill and plugin logos differ")
     servers = read_json(PLUGIN / ".mcp.json")["mcpServers"]
     require(list(servers) == ["augelab-studio"], "Expected exactly one Studio MCP server")
     require(servers["augelab-studio"] == {

@@ -3,7 +3,7 @@
 Describe a visual inspection task and work with AugeLab Studio through its local
 MCP server. One shared skill uses the running Studio's tools and documentation.
 
-**0.1.0 beta:** Codex local installation is verified. Live Studio workflows and
+**0.1.1 beta:** Codex local installation is verified. Live Studio workflows and
 Claude Code runtime testing are still pending. [Türkçe kurulum](README.tr.md).
 
 ## Prerequisites
@@ -90,8 +90,8 @@ python scripts/package.py
 
 Outputs:
 
-- `dist/augelab-0.1.0.zip`: plugin root, including both hidden client manifests.
-- `dist/augelab-marketplace-0.1.0.zip`: both catalogs, plugin, and installation docs.
+- `dist/augelab-0.1.1.zip`: plugin root, including both hidden client manifests.
+- `dist/augelab-marketplace-0.1.1.zip`: both catalogs, plugin, and installation docs.
 - `dist/SHA256SUMS.txt`: archive checksums.
 
 The packager uses explicit file allowlists and validates archive contents.

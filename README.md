@@ -16,13 +16,12 @@ Claude Code runtime testing are still pending. [Türkçe kurulum](README.tr.md).
 
 ## Install from GitHub
 
-The commands below apply after this repository is published at
-`AugelabTech/augelab-codex-claude-plugin`.
+Install from `lyunusl/augelab-codex-claude-plugin`:
 
 ### Codex
 
 ```sh
-codex plugin marketplace add AugelabTech/augelab-codex-claude-plugin
+codex plugin marketplace add lyunusl/augelab-codex-claude-plugin
 codex plugin add augelab@augelab-plugins
 ```
 
@@ -35,7 +34,7 @@ Start a new local chat and use `$augelab`, for example:
 Run these commands inside Claude Code:
 
 ```text
-/plugin marketplace add AugelabTech/augelab-codex-claude-plugin
+/plugin marketplace add lyunusl/augelab-codex-claude-plugin
 /plugin install augelab@augelab-plugins
 ```
 

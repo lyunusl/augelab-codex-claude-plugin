@@ -14,10 +14,10 @@ Plugin, Studio uygulamasını veya lisansını içermez.
 
 ## Codex kurulumu
 
-Depo `AugelabTech/augelab-codex-claude-plugin` adresinde yayınlandıktan sonra:
+`lyunusl/augelab-codex-claude-plugin` deposundan kurulum:
 
 ```sh
-codex plugin marketplace add AugelabTech/augelab-codex-claude-plugin
+codex plugin marketplace add lyunusl/augelab-codex-claude-plugin
 codex plugin add augelab@augelab-plugins
 ```
 
@@ -30,7 +30,7 @@ Yeni bir yerel sohbet açın:
 Claude Code içinde:
 
 ```text
-/plugin marketplace add AugelabTech/augelab-codex-claude-plugin
+/plugin marketplace add lyunusl/augelab-codex-claude-plugin
 /plugin install augelab@augelab-plugins
 ```
 

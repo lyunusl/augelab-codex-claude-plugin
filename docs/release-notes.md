@@ -9,14 +9,14 @@ client-specific manifests, and installation instructions in English and Turkish.
 Codex:
 
 ```sh
-codex plugin marketplace add AugelabTech/augelab-codex-claude-plugin
+codex plugin marketplace add lyunusl/augelab-codex-claude-plugin
 codex plugin add augelab@augelab-plugins
 ```
 
 Claude Code:
 
 ```text
-/plugin marketplace add AugelabTech/augelab-codex-claude-plugin
+/plugin marketplace add lyunusl/augelab-codex-claude-plugin
 /plugin install augelab@augelab-plugins
 ```
 

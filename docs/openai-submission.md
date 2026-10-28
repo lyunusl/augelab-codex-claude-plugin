@@ -6,10 +6,10 @@ Prepared 2026-10-28. This is preparation material, not a submitted application.
 
 - Name: AugeLab
 - Publisher: AugeLab (subject to verified publishing identity)
-- Short description: Build vision workflows in AugeLab Studio
-- Description: Connect your local Codex session to AugeLab Studio. Describe your
-  visual inspection task and use Studio's live tools to create, inspect, and
-  improve projects. Requires an installed, running Studio with MCP enabled.
+- Short description: Build computer vision and AI workflows
+- Description: Connect Codex to AugeLab Studio to build and inspect computer vision
+  and AI workflows, from image processing and visual inspection to model training.
+  Requires an installed, running Studio with MCP enabled.
 - Example prompt: Use AugeLab to build a visual inspection project from my sample images.
 - Execution: Desktop only, on the same computer as Studio.
 

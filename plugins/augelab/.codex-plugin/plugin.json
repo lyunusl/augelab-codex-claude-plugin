@@ -1,7 +1,7 @@
 {
   "name": "augelab",
-  "version": "0.1.1",
-  "description": "Create, inspect, and improve AugeLab Studio projects through its local MCP connection.",
+  "version": "0.1.2",
+  "description": "Build computer vision and AI workflows in AugeLab Studio through its local MCP connection.",
   "author": {
     "name": "AugeLab"
   },
@@ -10,8 +10,8 @@
   "requires_local_executor": true,
   "interface": {
     "displayName": "AugeLab",
-    "shortDescription": "Build vision workflows in AugeLab Studio",
-    "longDescription": "Connect Codex to AugeLab Studio on your computer. Describe your task and work with Studio projects using its live tools and documentation. Requires an installed, running Studio with MCP enabled.",
+    "shortDescription": "Build computer vision and AI workflows",
+    "longDescription": "Connect Codex to AugeLab Studio to build and inspect computer vision and AI workflows, from image processing and visual inspection to model training. Requires an installed, running Studio with MCP enabled.",
     "developerName": "AugeLab",
     "category": "Productivity",
     "logo": "./assets/augelab.png",

@@ -1,10 +1,11 @@
 # AugeLab for Codex and Claude Code
 
-Describe a visual inspection task and work with AugeLab Studio through its local
-MCP server. One shared skill uses the running Studio's tools and documentation.
+Build computer vision and AI workflows with AugeLab Studio, from image processing
+and visual inspection to model training. One shared skill connects Codex and
+Claude Code to the running Studio's tools through its local MCP server.
 
-**0.1.1 beta:** Codex local installation is verified. Live Studio workflows and
-Claude Code runtime testing are still pending. [Türkçe kurulum](README.tr.md).
+**0.1.2 beta:** Codex and a basic Studio image-processing workflow have been
+tested locally. Claude Code runtime testing is still pending. [Türkçe kurulum](README.tr.md).
 
 ## Prerequisites
 
@@ -90,8 +91,8 @@ python scripts/package.py
 
 Outputs:
 
-- `dist/augelab-0.1.1.zip`: plugin root, including both hidden client manifests.
-- `dist/augelab-marketplace-0.1.1.zip`: both catalogs, plugin, and installation docs.
+- `dist/augelab-0.1.2.zip`: plugin root, including both hidden client manifests.
+- `dist/augelab-marketplace-0.1.2.zip`: both catalogs, plugin, and installation docs.
 - `dist/SHA256SUMS.txt`: archive checksums.
 
 The packager uses explicit file allowlists and validates archive contents.

@@ -5,7 +5,7 @@
     {
       "name": "augelab",
       "source": "./plugins/augelab",
-      "description": "Work with AugeLab Studio through its local MCP connection."
+      "description": "Build computer vision and AI workflows with AugeLab Studio."
     }
   ]
 }

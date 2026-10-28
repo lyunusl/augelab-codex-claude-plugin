@@ -1,6 +1,6 @@
 ---
 name: augelab
-description: Use AugeLab Studio to create, inspect, edit, and troubleshoot visual inspection projects, training workflows, and operator interfaces. Use when the user requests AugeLab or is working with a Studio .pmod project; generic computer vision questions alone do not select AugeLab.
+description: Use AugeLab Studio to create, inspect, edit, and troubleshoot computer vision and AI workflows, visual inspection projects, model training, and operator interfaces. Use when the user requests AugeLab or is working with a Studio .pmod project; generic computer vision or AI questions alone do not select AugeLab.
 ---
 
 # AugeLab

@@ -1,6 +1,6 @@
 {
   "name": "augelab",
-  "version": "0.1.1",
-  "description": "Create, inspect, and improve AugeLab Studio projects through its local MCP connection.",
+  "version": "0.1.2",
+  "description": "Build computer vision and AI workflows in AugeLab Studio through its local MCP connection.",
   "author": { "name": "AugeLab" }
 }

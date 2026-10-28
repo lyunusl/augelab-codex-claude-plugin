@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.1.2 - Beta
+
+- Clarify the plugin's computer vision and AI focus across both clients.
+
 ## 0.1.1 - Beta
 
 - Include the original AugeLab symbol in the plugin listing, composer, and skill.

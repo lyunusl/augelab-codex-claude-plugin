@@ -1,0 +1,11 @@
+{
+  "name": "augelab-plugins",
+  "owner": { "name": "AugeLab" },
+  "plugins": [
+    {
+      "name": "augelab",
+      "source": "./plugins/augelab",
+      "description": "Work with AugeLab Studio through its local MCP connection."
+    }
+  ]
+}

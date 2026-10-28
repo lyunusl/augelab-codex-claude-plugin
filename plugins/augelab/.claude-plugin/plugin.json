@@ -1,0 +1,6 @@
+{
+  "name": "augelab",
+  "version": "0.1.0",
+  "description": "Create, inspect, and improve AugeLab Studio projects through its local MCP connection.",
+  "author": { "name": "AugeLab" }
+}

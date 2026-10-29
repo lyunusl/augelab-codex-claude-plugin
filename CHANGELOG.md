@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.1.3 - Beta
+
+- Reuse the single AugeLab skill for Codex onboarding and first setup in both clients.
+- Download the official Windows AWS EXE, verify SHA-256, and install silently
+  when Studio is missing; reuse an existing installation and report MCP readiness.
+- Manage official account registration, authorized Gmail/Outlook confirmation,
+  and the user's own Studio license activation, with explicit manual fallbacks.
+- Add Windows setup regression tests without installing Studio or accessing mail.
+
 ## 0.1.2 - Beta
 
 - Clarify the plugin's computer vision and AI focus across both clients.

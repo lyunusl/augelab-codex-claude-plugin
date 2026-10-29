@@ -9,14 +9,20 @@ Prepared 2026-10-28. This is preparation material, not a submitted application.
 - Short description: Build computer vision and AI workflows
 - Description: Connect Codex to AugeLab Studio to build and inspect computer vision
   and AI workflows, from image processing and visual inspection to model training.
-  Requires an installed, running Studio with MCP enabled.
+  Windows setup can install Studio; a valid license and enabled MCP are required.
 - Example prompt: Use AugeLab to build a visual inspection project from my sample images.
 - Execution: Desktop only, on the same computer as Studio.
 
 ## Architecture to explain during eligibility review
 
 The plugin packages one skill and a loopback HTTP connection to an independently
-installed desktop application. The plugin does not bundle or install Studio.
+installed desktop application. The plugin does not bundle Studio. Its Windows
+setup skill downloads the official AWS EXE, checks a reviewed SHA-256 pin, and
+installs it if missing. The same skill helps registration, authorized email
+confirmation, and license activation through the official account and Studio UI.
+It declares `extensions.com.openai.onboardingSkill` and contains no lifecycle hooks.
+Mail/browser/desktop tools depend on the user's client; manual instructions are
+provided when unavailable. Installing the plugin grants no Studio license.
 Studio exposes MCP tools, instructions, and resources. The skill retrieves current
 guidance from that application instead of carrying copies of its tool schemas.
 The package contains no credentials, remote hosted MCP endpoint, or lifecycle hooks.

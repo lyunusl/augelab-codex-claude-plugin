@@ -1,7 +1,8 @@
 # Connect to the local Studio
 
 This plugin connects to an existing Studio process using Streamable HTTP at
-`http://127.0.0.1:8765/mcp`. It does not install or start Studio. The local
+`http://127.0.0.1:8765/mcp`. First setup can install and start Studio on Windows;
+see [setup.md](setup.md). The local
 connection requires the agent client and Studio to run on the same computer.
 
 1. Check whether the plugin is installed and enabled in the client. A new chat
@@ -21,8 +22,9 @@ connection requires the agent client and Studio to run on the same computer.
 5. Retry the MCP connection and read the advertised Studio status and instructions.
    A responding HTTP address alone does not establish MCP compatibility.
 
-If Studio is not installed, explain that the desktop application is a prerequisite
-and use the user's approved AugeLab installer or official installation source.
+If Studio is not installed and the user requests setup, follow [setup.md](setup.md)
+to install the official Windows EXE, then activate the user's license using
+[account-and-license.md](account-and-license.md).
 Do not install an unrelated public package with a similar name or require access
 to the private Studio source repository.
 

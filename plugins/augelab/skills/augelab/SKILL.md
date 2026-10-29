@@ -1,6 +1,6 @@
 ---
 name: augelab
-description: Use AugeLab Studio to create, inspect, edit, and troubleshoot computer vision and AI workflows, visual inspection projects, model training, and operator interfaces. Use when the user requests AugeLab or is working with a Studio .pmod project; generic computer vision or AI questions alone do not select AugeLab.
+description: Set up AugeLab Studio, install the Windows desktop app, help register and activate a license, and create, inspect, edit, or troubleshoot computer vision and AI workflows. Use when the user requests AugeLab or works with a Studio .pmod project; generic vision or AI questions alone do not select AugeLab.
 ---
 
 # AugeLab
@@ -9,6 +9,19 @@ AugeLab Studio is a local visual programming application. Use the connected
 Studio as the source of truth for its capabilities, project state, and workflow
 instructions. This skill is the entry point; it does not maintain a second tool
 catalog or a copy of Studio's operating manual.
+
+## First setup
+
+This is also the plugin's Codex onboarding skill. When invoked to set up the
+plugin, install Studio, or recover a missing local installation, follow
+[setup.md](references/setup.md). On Windows, run the bundled setup script to
+reuse an existing Studio or download, verify, and install the official AWS EXE.
+Then manage account registration, email confirmation, and license activation
+using [account-and-license.md](references/account-and-license.md), followed by
+the MCP connection. Use the user's connected Gmail or Outlook tools when
+available and authorized; use the manual fallback when automation is blocked.
+Keep installation, account confirmation, license activation, and a working MCP
+connection as separate results. Report only the steps actually verified.
 
 ## Connect
 

@@ -22,3 +22,10 @@ jobs:
             dist/*.zip
             dist/SHA256SUMS.txt
           if-no-files-found: error
+  windows-setup:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Test setup without installing Studio
+        shell: powershell
+        run: .\tests\setup-windows.tests.ps1

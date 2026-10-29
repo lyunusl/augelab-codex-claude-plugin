@@ -1,16 +1,20 @@
-# AugeLab 0.1.1 beta - Codex and Claude Code
+# AugeLab 0.1.3 beta - Codex and Claude Code
 
-This update adds the original AugeLab logo to the plugin listing, composer,
-and skill. Existing Codex users can refresh and install the updated package:
+First setup now downloads the official Windows EXE from AugeLab's AWS S3 bucket,
+checks its reviewed SHA-256, and installs Studio silently when missing. Existing
+installations are reused. Existing Codex users can update the plugin:
 
 ```sh
 codex plugin marketplace upgrade augelab-plugins
 codex plugin add augelab@augelab-plugins
 ```
 
-The AugeLab plugin package connects a local coding agent to an existing
-AugeLab Studio installation using MCP. It contains one shared `augelab` skill,
-client-specific manifests, and installation instructions in English and Turkish.
+The single shared skill is also the Codex onboarding entry point. It helps
+register or sign in at the official account website, read the relevant
+confirmation/license email through authorized Gmail or Outlook tools, and apply
+the user's own license key in Studio. User-only sign-in, terms, password,
+CAPTCHA, and MFA steps hand off clearly. Missing tools or unavailable licenses
+produce specific manual instructions. The plugin grants no license.
 
 ## Install
 
@@ -28,17 +32,22 @@ Claude Code:
 /plugin install augelab@augelab-plugins
 ```
 
-Run Studio on the same computer and start its MCP server first.
+Select **Run setup** if offered in Codex, or start a new local chat and ask
+`$augelab Set up Studio and help activate my license`. In Claude Code use
+`/augelab:augelab Set up Studio and activate my license`. Setup installs onto
+the same computer as the local agent; it does not use an unattended install hook.
 
 ## Assets
 
-- `augelab-0.1.1.zip`: plugin only.
-- `augelab-marketplace-0.1.1.zip`: extract to install from a local marketplace.
+- `augelab-0.1.3.zip`: plugin only.
+- `augelab-marketplace-0.1.3.zip`: extract to install from a local marketplace.
 - `SHA256SUMS.txt`: SHA-256 checksums for both archives.
 
 ## Beta limitations
 
-Codex local installation and package checks passed. Live Studio workflows and
-Claude Code runtime testing remain unverified. Studio is installed separately;
-the plugin does not supply a Studio license. This release is not an OpenAI or
-Anthropic directory listing.
+Windows regression tests, package inventory, and local existing-Studio/MCP
+detection passed. The real S3 EXE download and pinned hash were checked; the EXE's
+silent argument validation returned the documented error code for an invalid path.
+A full clean-machine install, fresh account/email/license activation, and Claude
+Code runtime test remain pending. This release is not an OpenAI or Anthropic
+directory listing.

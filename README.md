@@ -4,14 +4,18 @@ Build computer vision and AI workflows with AugeLab Studio, from image processin
 and visual inspection to model training. One shared skill connects Codex and
 Claude Code to the running Studio's tools through its local MCP server.
 
-**0.1.2 beta:** Codex and a basic Studio image-processing workflow have been
-tested locally. Claude Code runtime testing is still pending. [Türkçe kurulum](README.tr.md).
+**0.1.3 beta:** Windows setup downloads and installs Studio when missing, then
+helps register an account, confirm email, and activate the user's license.
+Claude Code runtime and a fresh-machine install/activation test are still pending.
+[Türkçe kurulum](README.tr.md).
 
 ## Prerequisites
 
-- AugeLab Studio with MCP support, installed and running on the same computer as
-  your local Codex or Claude Code session.
-- Start the server in Studio: **Chat > Settings > MCP > Start**.
+- A local Codex or Claude Code session on the same computer as Studio.
+- On Windows x64, first setup can download and install the official Studio EXE.
+- A valid Studio license. Setup helps obtain and activate the user's own key;
+  installing the plugin does not grant a license.
+- Once activated, start Studio's server: **Chat > Settings > MCP > Start**.
 - The default endpoint is `http://127.0.0.1:8765/mcp`.
 - This plugin does not include Studio, a Studio license, or Studio dependencies.
 
@@ -26,9 +30,10 @@ codex plugin marketplace add lyunusl/augelab-codex-claude-plugin
 codex plugin add augelab@augelab-plugins
 ```
 
-Start a new local chat and use `$augelab`, for example:
+Select **Run setup** when offered after installation. The existing `augelab`
+skill is the onboarding entry point. On older clients, open a new local chat:
 
-> $augelab Inspect Studio's current status without changing or running a project.
+> $augelab Set up Studio on this computer, install it if missing, and help activate my license using my connected Gmail or Outlook account.
 
 ### Claude Code
 
@@ -39,9 +44,33 @@ Run these commands inside Claude Code:
 /plugin install augelab@augelab-plugins
 ```
 
-Start a new session and invoke `/augelab:augelab`, or ask Claude to use AugeLab.
+Start a new session and invoke `/augelab:augelab Set up Studio on this computer`,
+or ask Claude to use AugeLab and complete setup.
 This configuration targets **Claude Code**, not the separate Claude Desktop chat
 configuration file. Claude discovers the plugin's shared `.mcp.json` and `skills/`.
+
+## First setup and activation
+
+The agent runs the bundled Windows setup script. If Studio is missing, it
+downloads the EXE directly from AugeLab's AWS S3 bucket, checks its pinned
+SHA-256, installs silently into `%LOCALAPPDATA%\Programs\AugeLab Studio`, and
+opens Studio. Existing installations are reused. Base setup omits the optional
+GPU/AI bundle; it can be added for a requested workflow on compatible hardware.
+
+For license activation, the agent uses the official [account site](https://account.augelab.com).
+It can use authorized Gmail/Outlook tools to identify the chosen address and
+find the registration confirmation or license email, then enter the user's key
+in Studio. Email connectors and browser/desktop tools are optional client
+capabilities, not bundled services. The user completes required sign-in,
+password, terms, CAPTCHA, or MFA steps. If tools or account entitlements are
+missing, the agent explains the exact remaining manual steps. Keys stay out of
+chat, logs, and repository files.
+
+Automatic download runs in the setup conversation, not immediately upon plugin
+installation. Clients without onboarding support need the setup prompt above.
+The package does not use lifecycle hooks. See the detailed
+[setup](plugins/augelab/skills/augelab/references/setup.md) and
+[activation](plugins/augelab/skills/augelab/references/account-and-license.md) workflows.
 
 ## Install from a local folder or ZIP
 
@@ -89,10 +118,16 @@ Python 3.12+, standard library only:
 python scripts/package.py
 ```
 
+Windows setup regression tests (no real installation or mailbox access):
+
+```powershell
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File tests/setup-windows.tests.ps1
+```
+
 Outputs:
 
-- `dist/augelab-0.1.2.zip`: plugin root, including both hidden client manifests.
-- `dist/augelab-marketplace-0.1.2.zip`: both catalogs, plugin, and installation docs.
+- `dist/augelab-0.1.3.zip`: plugin root, including both hidden client manifests.
+- `dist/augelab-marketplace-0.1.3.zip`: both catalogs, plugin, and installation docs.
 - `dist/SHA256SUMS.txt`: archive checksums.
 
 The packager uses explicit file allowlists and validates archive contents.
@@ -109,6 +144,8 @@ plugins/augelab/
   .claude-plugin/plugin.json           Claude Code metadata
   .mcp.json                           Shared local MCP connection
   skills/augelab/SKILL.md              One shared entry-point skill
+  skills/augelab/scripts/              Windows EXE setup and reviewed download pin
+  skills/augelab/references/           Setup, account/license, and MCP guidance
 ```
 
 This repository contains the plugin only, not the proprietary Studio source.

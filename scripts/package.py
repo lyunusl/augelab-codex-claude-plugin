@@ -20,6 +20,10 @@ PLUGIN_FILES = (
     "skills/augelab/agents/openai.yaml",
     "skills/augelab/assets/augelab.png",
     "skills/augelab/references/connection.md",
+    "skills/augelab/references/setup.md",
+    "skills/augelab/references/account-and-license.md",
+    "skills/augelab/scripts/setup-windows.ps1",
+    "skills/augelab/scripts/windows-installer.json",
 )
 MARKETPLACE_FILES = (
     ".agents/plugins/marketplace.json",
@@ -54,6 +58,12 @@ def validate() -> str:
     require(codex["skills"] == "./skills/", "Unexpected skills path")
     require(codex["mcpServers"] == "./.mcp.json", "Unexpected MCP path")
     require(codex["requires_local_executor"] is True, "Desktop execution must be declared")
+    require(codex["extensions"]["com.openai"]["onboardingSkill"] ==
+            "./skills/augelab/SKILL.md", "Setup must reuse the shared skill")
+    installer = read_json(PLUGIN / "skills/augelab/scripts/windows-installer.json")
+    require(installer["url"] == "https://studio-desktop-application.s3.eu-central-1.amazonaws.com/AugeLab%20Ai%20Studio.exe",
+            "Unexpected installer source")
+    require(bool(re.fullmatch(r"[a-f0-9]{64}", installer["sha256"])), "Invalid installer pin")
     for field in ("logo", "composerIcon"):
         require(codex["interface"].get(field) == "./assets/augelab.png", f"Missing AugeLab {field}")
     logo = (PLUGIN / "assets/augelab.png").read_bytes()

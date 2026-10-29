@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.1.4 - Beta
+
+- Resolve the Windows setup script directly from the installed skill in Claude
+  Code, including inspection-only requests, without searching the user profile.
+
 ## 0.1.3 - Beta
 
 - Reuse the single AugeLab skill for Codex onboarding and first setup in both clients.

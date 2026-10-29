@@ -1,8 +1,13 @@
-# AugeLab 0.1.3 beta - Codex and Claude Code
+# AugeLab 0.1.4 beta - Codex and Claude Code
 
 First setup now downloads the official Windows EXE from AugeLab's AWS S3 bucket,
 checks its reviewed SHA-256, and installs Studio silently when missing. Existing
 installations are reused. Existing Codex users can update the plugin:
+
+Claude Code now receives the installed skill's exact setup-script path, including
+for inspection-only requests, so it can find the helper without scanning the
+user's profile. A fresh Claude desktop Code session verified `-CheckOnly` against
+the running Studio using an isolated test plugin.
 
 ```sh
 codex plugin marketplace upgrade augelab-plugins
@@ -39,8 +44,8 @@ the same computer as the local agent; it does not use an unattended install hook
 
 ## Assets
 
-- `augelab-0.1.3.zip`: plugin only.
-- `augelab-marketplace-0.1.3.zip`: extract to install from a local marketplace.
+- `augelab-0.1.4.zip`: plugin only.
+- `augelab-marketplace-0.1.4.zip`: extract to install from a local marketplace.
 - `SHA256SUMS.txt`: SHA-256 checksums for both archives.
 
 ## Beta limitations
@@ -48,6 +53,5 @@ the same computer as the local agent; it does not use an unattended install hook
 Windows regression tests, package inventory, and local existing-Studio/MCP
 detection passed. The real S3 EXE download and pinned hash were checked; the EXE's
 silent argument validation returned the documented error code for an invalid path.
-A full clean-machine install, fresh account/email/license activation, and Claude
-Code runtime test remain pending. This release is not an OpenAI or Anthropic
-directory listing.
+A full clean-machine install and fresh account/email/license activation remain
+pending. This release is not an OpenAI or Anthropic directory listing.

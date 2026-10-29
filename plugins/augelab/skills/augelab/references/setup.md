@@ -10,12 +10,11 @@ It is part of the existing `augelab` skill. Claude Code users invoke
 Explain that setup installs the official AugeLab Studio desktop application
 when missing and then helps activate the user's own license. Use local shell
 execution on the same Windows computer as Studio. A hosted/cloud shell cannot
-install software onto the user's computer. Resolve this path relative to the
-installed skill directory, not the user's project working directory:
-
-```powershell
-powershell.exe -NoProfile -ExecutionPolicy Bypass -File "<skill-directory>\scripts\setup-windows.ps1"
-```
+install software onto the user's computer. Run the concrete command shown in
+the main skill, omitting `-CheckOnly` for an authorized installation. Claude
+Code resolves the skill directory in that command when loading `SKILL.md`.
+For other clients, use the installed directory containing the loaded skill's
+`SKILL.md`, not the user's project directory. Do not search the user profile.
 
 The execution policy option applies to this child process only. It does not
 change machine policy. If organizational policy blocks the script, explain the

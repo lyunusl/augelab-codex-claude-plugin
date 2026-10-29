@@ -4,7 +4,7 @@ Build computer vision and AI workflows with AugeLab Studio, from image processin
 and visual inspection to model training. One shared skill connects Codex and
 Claude Code to the running Studio's tools through its local MCP server.
 
-**0.1.3 beta:** Windows setup downloads and installs Studio when missing, then
+**0.1.4 beta:** Windows setup downloads and installs Studio when missing, then
 helps register an account, confirm email, and activate the user's license.
 Claude Code runtime and a fresh-machine install/activation test are still pending.
 [Türkçe kurulum](README.tr.md).
@@ -126,8 +126,8 @@ powershell.exe -NoProfile -ExecutionPolicy Bypass -File tests/setup-windows.test
 
 Outputs:
 
-- `dist/augelab-0.1.3.zip`: plugin root, including both hidden client manifests.
-- `dist/augelab-marketplace-0.1.3.zip`: both catalogs, plugin, and installation docs.
+- `dist/augelab-0.1.4.zip`: plugin root, including both hidden client manifests.
+- `dist/augelab-marketplace-0.1.4.zip`: both catalogs, plugin, and installation docs.
 - `dist/SHA256SUMS.txt`: archive checksums.
 
 The packager uses explicit file allowlists and validates archive contents.

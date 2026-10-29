@@ -66,7 +66,7 @@ function Test-StudioMcp {
     $response = $null
     try {
         $client.DefaultRequestHeaders.Accept.ParseAdd('application/json, text/event-stream')
-        $body = '{"jsonrpc":"2.0","id":1,"method":"initialize","params":{"protocolVersion":"2025-03-26","capabilities":{},"clientInfo":{"name":"augelab-plugin-setup","version":"0.1.3"}}}'
+        $body = '{"jsonrpc":"2.0","id":1,"method":"initialize","params":{"protocolVersion":"2025-03-26","capabilities":{},"clientInfo":{"name":"augelab-plugin-setup","version":"0.1.4"}}}'
         $content = [Net.Http.StringContent]::new($body, [Text.Encoding]::UTF8, 'application/json')
         $response = $client.PostAsync($script:McpEndpoint, $content).GetAwaiter().GetResult()
         if (-not $response.IsSuccessStatusCode) { return $false }

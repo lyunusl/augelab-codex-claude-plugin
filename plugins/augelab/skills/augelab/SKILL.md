@@ -12,10 +12,25 @@ catalog or a copy of Studio's operating manual.
 
 ## First setup
 
-This is also the plugin's Codex onboarding skill. When invoked to set up the
-plugin, install Studio, or recover a missing local installation, follow
-[setup.md](references/setup.md). On Windows, run the bundled setup script to
-reuse an existing Studio or download, verify, and install the official AWS EXE.
+This is also the plugin's Codex onboarding skill. For setup, a request to check
+whether Studio is installed, or recovery of a missing installation, read
+[setup.md](references/setup.md). On Windows, use the bundled setup script in this
+skill's `scripts/` directory; do not search the user profile for it. In Claude
+Code, the following path is resolved to this installed skill when it is loaded:
+
+```powershell
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File "${CLAUDE_SKILL_DIR}/scripts/setup-windows.ps1" -CheckOnly
+```
+
+Use this command for an inspection-only request. For an authorized installation,
+omit `-CheckOnly` and follow the setup reference. Other clients should resolve
+`scripts/setup-windows.ps1` relative to the actual installed directory containing
+this `SKILL.md`; the Claude-specific substitution may not be available there.
+If the file is missing from that installed skill, report a damaged or outdated
+plugin and ask for a refresh instead of scanning unrelated directories.
+
+The script reuses an existing Studio or downloads, verifies, and installs the
+official AWS EXE.
 Then manage account registration, email confirmation, and license activation
 using [account-and-license.md](references/account-and-license.md), followed by
 the MCP connection. Use the user's connected Gmail or Outlook tools when

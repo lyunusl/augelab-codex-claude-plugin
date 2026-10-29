@@ -5,7 +5,7 @@ görü ve yapay zekâ iş akışları oluşturun. Tek bir `augelab` becerisi, ç
 AugeLab Studio'nun mevcut MCP araçlarına bağlanır.
 Studio'nun blok kataloğu ve iş akışları plugin içinde kopyalanmaz.
 
-**0.1.3 beta:** İlk kurulum akışı, Windows'ta Studio eksikse resmi AWS EXE'sini
+**0.1.4 beta:** İlk kurulum akışı, Windows'ta Studio eksikse resmi AWS EXE'sini
 indirip kurar; hesap kaydı, e-posta doğrulaması ve lisans aktivasyonunu yönetir.
 Temiz bilgisayarda tam kurulum/aktivasyon ve Claude Code çalışma testi henüz tamamlanmadı.
 
@@ -55,7 +55,7 @@ Claude Desktop'ın ayrı sohbet bağlantı ayarları için değildir.
 
 ## Yerel ZIP kurulumu
 
-`augelab-marketplace-0.1.3.zip` arşivini çıkarın. Codex için çıkarılan klasörde
+`augelab-marketplace-0.1.4.zip` arşivini çıkarın. Codex için çıkarılan klasörde
 `codex plugin marketplace add .`, ardından `codex plugin add augelab@augelab-plugins`
 çalıştırın. Claude Code için `claude plugin marketplace add .`, ardından
 `claude plugin install augelab@augelab-plugins` kullanın.
